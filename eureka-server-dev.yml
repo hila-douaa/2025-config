@@ -1,0 +1,7 @@
+# Configuration spécifique à Eureka
+eureka:
+  client:
+    # Indique à Eureka de ne pas s'enregistrer auprès de lui-même
+    register-with-eureka: false
+    # Indique de ne pas essayer de récupérer la liste des services (car c'est lui le serveur)
+    fetch-registry: false
