@@ -18,10 +18,14 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        # Route pour User Service
+        # Route simplifiée pour User Service (ex: localhost:7777/users)
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/user-service/**
-          filters:
-            - StripPrefix=1
+            - Path=/users/**
+        
+        # Route simplifiée pour Product Service (ex: localhost:7777/products)
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+            - Path=/products/**
